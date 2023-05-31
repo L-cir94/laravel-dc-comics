@@ -33,6 +33,9 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">Shop</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="{{route('admin.comics.index')}}">Admin</a>
+                    </li>
             
                 </ul>
             </div>

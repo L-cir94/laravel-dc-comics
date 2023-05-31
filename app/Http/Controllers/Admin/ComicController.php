@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
 use App\Http\Requests\StoreComicRequest;
+use App\Http\Controllers\Controller;
 use App\Http\Requests\UpdateComicRequest;
 use App\Models\Comic;
 
@@ -15,7 +16,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-        //
+    $comics = Comic::all();
+    return view('admin.comics.index', compact('comics'));
     }
 
     /**
