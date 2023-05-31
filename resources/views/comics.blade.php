@@ -3,7 +3,31 @@
 @section('content')
 <div class="container">
     <div class="row">
-        <h1>Comics section of laravel-dc-comics</h1>
+        @foreach ($comics as $comic )
+        <div class="col-3  g-2">
+            
+                
+                <div class="card h-100">
+                    <div class="card-header text-center">
+                        <strong>
+                            {{$comic->title}}
+                        </strong>
+                    </div>
+                    <div class="card-body">
+                      <img class="img-fluid" src="{{$comic->thumb}}" alt=" {{$comic->title}}">
+                      <p>{{$comic->description}}</p>
+                      <p><strong>{{$comic->price}}</strong></p>
+                      <p>{{$comic->series}}</p>
+                    </div>
+                    <div class="card footer text-center">
+                        <h4>{{$comic->type}}</h4>
+                        <p>Data di Stampa: {{$comic->sale_date}}</p>
+                    </div>
+                </div>
+                
+            
+        </div>
+        @endforeach
     </div>
 </div>
 @endsection
