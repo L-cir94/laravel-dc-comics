@@ -16,8 +16,8 @@ class ComicController extends Controller
      */
     public function index()
     {
-    $comics = Comic::all();
-    return view('admin.comics.index', compact('comics'));
+        $comics = Comic::all();
+        return view('admin.comics.index', compact('comics'));
     }
 
     /**
@@ -27,7 +27,7 @@ class ComicController extends Controller
      */
     public function create()
     {
-    return view('admin.comics.create');
+        return view('admin.comics.create');
     }
 
     /**
@@ -38,8 +38,19 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        //
-    }
+        dd($request::all());
+/*         $data = [
+            "thumb" => $request->thumb,
+            "price" => $request->price,
+            "title" => $request->title,
+            "description" => $request->description,
+            "type" => $request->type,
+            "sale_date" => $request->sale_date,
+            "series" => $request->series,
+        ];
+        Comic::create($data);
+        return to_route('admin.comics.index')->with('message','is added');
+    } */
 
     /**
      * Display the specified resource.
@@ -49,7 +60,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        //
+        return view('admin.comics.show',compact('comic'));
     }
 
     /**
