@@ -4,12 +4,12 @@
 <div class="container">
     
     <div class="row me-5">
-        <form action="{{route('admin.comics.store')}}" method="post">
+        <form action="{{route('admin.comics.store', $comic->id)}}" method="post">
             @csrf
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text"
-                class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="comic's title">
+                class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="comic's title" required>
               <small id="helpId" class="form-text text-muted">Inserisci il titolo del fumetto</small>
             </div>
             <div class="mb-3">

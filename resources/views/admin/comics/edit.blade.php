@@ -1,16 +1,16 @@
 @extends('layouts.app')
-@section('title', 'Table Comics')
+@section('title', 'Edit comic')
 @section('content')
 <div class="container">
     
     <div class="row me-5">
-        <form action="{{route('admin.comics.store')}}" method="post">
+        <form action="{{route('admin.comics.update', $comic->id)}}" method="post">
             @csrf
-            @method('put')
+            @method('PUT')
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text"
-                class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="comic's title" value="{{$comic->title}}">
+                class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="comic's title" value="{{$comic->title}}" required>
               <small id="helpId" class="form-text text-muted">Inserisci il titolo del fumetto</small>
             </div>
             <div class="mb-3">
@@ -21,7 +21,7 @@
               </div>
             <div class="mb-3">
                 <label for="price" class="form-label">Price</label>
-                <input type="text" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="" step="0.01" value="{{$comic->price}}">
+                <input type="number" class="form-control" name="price" id="price" aria-describedby="helpId" placeholder="" step="0.01" value="{{$comic->price}}">
                 <small id="helpId" class="form-text text-muted">inserisci il prezzo</small>
             </div>
             <div class="mb-3">

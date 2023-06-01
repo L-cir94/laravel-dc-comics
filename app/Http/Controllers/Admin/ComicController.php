@@ -84,7 +84,18 @@ class ComicController extends Controller
      */
     public function update(UpdateComicRequest $request, Comic $comic)
     {
-        //
+        /* dd($request->all()); */
+         $data = [
+            "thumb" => $request->thumb,
+            "price" => $request->price,
+            "title" => $request->title,
+            "description" => $request->description,
+            "type" => $request->type,
+            "sale_date" => $request->sale_date,
+            "series" => $request->series,
+        ];
+        $comic->update($data);
+        return to_route('admin.comics.index')->with('message', 'valore modificato correttamente');
     }
 
     /**
@@ -95,6 +106,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-        //
-    }
+   $comic->delete();
+  return to_route('admin.comics.index')->with('message','valore cancellato correttamente');
+}
 }
