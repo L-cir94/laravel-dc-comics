@@ -38,8 +38,9 @@ class ComicController extends Controller
      */
     public function store(StoreComicRequest $request)
     {
-        dd($request::all());
-/*         $data = [
+        /* dd($request->all()); */
+    
+        $data = [
             "thumb" => $request->thumb,
             "price" => $request->price,
             "title" => $request->title,
@@ -50,7 +51,7 @@ class ComicController extends Controller
         ];
         Comic::create($data);
         return to_route('admin.comics.index')->with('message','is added');
-    } */
+    } 
 
     /**
      * Display the specified resource.

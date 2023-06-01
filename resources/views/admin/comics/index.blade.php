@@ -2,6 +2,11 @@
 @section('title', 'Table Comics')
 @section('content')
 <a name="" id="" class="btn btn-primary" href="{{route('admin.comics.create')}}" role="button">Add New Comic</a>
+@if (session('message'))
+<div class="alert alert-info" role="alert">
+    <strong>{{session('message')}}</strong>
+</div>
+@endif
     <div class="table-responsive">
         <table class="table table-striped
     table-hover	

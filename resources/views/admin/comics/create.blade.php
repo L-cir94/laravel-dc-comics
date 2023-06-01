@@ -24,8 +24,8 @@
                 <small id="helpId" class="form-text text-muted">inserisci il prezzo</small>
             </div>
             <div class="mb-3">
-                <label for="img" class="form-label">Thumb</label>
-                <input type="text" class="form-control" name="img" id="img" aria-describedby="helpId" placeholder="">
+                <label for="thumb" class="form-label">Thumb</label>
+                <input type="text" class="form-control" name="thumb" id="thumb" aria-describedby="helpId" placeholder="">
                 <small id="helpId" class="form-text text-muted">Insert Url</small>
             </div>
             <div class="mb-3">
