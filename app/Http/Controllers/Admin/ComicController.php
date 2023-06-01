@@ -40,15 +40,15 @@ class ComicController extends Controller
     {
         /* dd($request->all()); */
         $val_data = $request->validate([
-            'thumb' => 'min:5|nullable',
+            'thumb' => 'min:5|nullable|string',
             'title' => 'required|min:1|max:500',
             'price' => 'nullable|numeric|max:1000',
             'description' => 'nullable|max:1000',
             'type' => 'nullable',
-            'sale_date' => 'nullable|numeric',
+            'sale_date' => 'required|numeric',
             'series' => 'nullable|numeric'
         ]);
-        dd($val_data);
+       
         $data = [
             "thumb" => $request->thumb,
             "price" => $request->price,
