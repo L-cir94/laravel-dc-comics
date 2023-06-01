@@ -57,27 +57,27 @@
               <ul class="d-flex gap-2">
                 <li>
                   <a href="#">
-                    <img src="./../assets/img/footer-facebook.png" alt="">
+                    <img src="{{ Vite::asset('resources\img\footer-facebook.png') }}" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="./../assets/img/footer-twitter.png" alt="">
+                    <img src="{{ Vite::asset('resources\img\footer-youtube.png') }}" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="./../assets/img/footer-youtube.png" alt="">
+                    <img src="{{ Vite::asset('resources\img\footer-twitter.png') }}" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="./../assets/img/footer-pinterest.png" alt="">
+                    <img src="{{ Vite::asset('resources\img\footer-pinterest.png') }}" alt="">
                   </a>
                 </li>
                 <li>
                   <a href="#">
-                    <img src="./../assets/img/footer-periscope.png" alt="">
+                    <img src="{{ Vite::asset('resources\img\footer-periscope.png') }}" alt="">
                   </a>
                 </li>
               </ul>

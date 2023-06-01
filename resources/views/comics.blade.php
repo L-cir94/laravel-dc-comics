@@ -12,9 +12,11 @@
                         <strong>
                             {{$comic->title}}
                         </strong>
+                        <a href="{{ route('admin.comics.show', $comic->id) }}"><i class="fa-solid fa-eye"></i></a>   
                     </div>
                     <div class="card-body">
                       <img class="img-fluid" src="{{$comic->thumb}}" alt=" {{$comic->title}}">
+                          
                       <p>{{$comic->description}}</p>
                       <p><strong>{{$comic->price}}</strong></p>
                       <p>{{$comic->series}}</p>

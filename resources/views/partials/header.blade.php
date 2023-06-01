@@ -3,7 +3,7 @@
         <div class="row">
             <div class="navbar">
                 <div class="logo">
-                  <a href="{{route('home')}}"><img class="img-fluid" src="{{ Vite::asset('resources\img\dc-logo.png') }}" alt="dc-logo.png"></a>  
+                  <a href="{{route('home')}}"><img width="50" class="img-fluid" src="{{ Vite::asset('resources\img\dc-logo.png') }}" alt="dc-logo.png"></a>  
                 </div>
                 <ul class="nav justify-content-center">
                     <li class="nav-item">
