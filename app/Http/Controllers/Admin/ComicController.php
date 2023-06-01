@@ -45,8 +45,8 @@ class ComicController extends Controller
             'price' => 'nullable|numeric|max:1000',
             'description' => 'nullable|max:1000',
             'type' => 'nullable',
-            'sale_date' => 'required|numeric',
-            'series' => 'nullable|numeric'
+            'sale_date' => 'required',
+            'series' => 'nullable'
         ]);
        
         $data = [
@@ -94,6 +94,15 @@ class ComicController extends Controller
     public function update(UpdateComicRequest $request, Comic $comic)
     {
         /* dd($request->all()); */
+        $val_data = $request->validate([
+            'thumb' => 'min:5|nullable|string',
+            'title' => 'required|min:1|max:500',
+            'price' => 'nullable|numeric|max:1000',
+            'description' => 'nullable|max:1000',
+            'type' => 'nullable',
+            'sale_date' => 'required',
+            'series' => 'nullable'
+        ]);
         $data = [
             "thumb" => $request->thumb,
             "price" => $request->price,
@@ -103,7 +112,7 @@ class ComicController extends Controller
             "sale_date" => $request->sale_date,
             "series" => $request->series,
         ];
-        $comic->update($data);
+        $comic->update($val_data);
         return to_route('admin.comics.index')->with('message', 'valore modificato correttamente');
     }
 

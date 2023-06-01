@@ -17,12 +17,10 @@
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
                     <input type="text" class="form-control" name="title" id="title" aria-describedby="helpId"
-                        placeholder="comic's title" class="@error('title') is-invalid @enderror">
+                        placeholder="comic's title">
                     <small id="helpId" class="form-text text-muted">Inserisci il titolo del fumetto</small>
                 </div>
-                @error('title')
-                    <div class="alert alert-danger">{{ $message }}</div>
-                @enderror
+
                 <div class="mb-3">
                     <label for="series" class="form-label">Series</label>
                     <input type="text" class="form-control" name="series" id="series" aria-describedby="helpId"
