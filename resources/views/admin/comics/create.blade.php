@@ -12,7 +12,7 @@
             </div>
         @endif
         <div class="row me-5">
-            <form action="{{ route('admin.comics.store', $comic->id) }}" method="post">
+            <form action="{{ route('admin.comics.store') }}" method="post">
                 @csrf
                 <div class="mb-3">
                     <label for="title" class="form-label">Title</label>
