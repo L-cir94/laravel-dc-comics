@@ -38,7 +38,7 @@
                         <td>{{ $comic->type }}</td>
                         <td>{{ $comic->sale_date }}</td>
                         <td>{{ $comic->series }}</td>
-                        <td><a href="{{route('admin.comics.show', $comic->id)}}">view</a> / EDITE / DELETE</td>
+                        <td><a href="{{route('admin.comics.show', $comic->id)}}">VIEW</a> / <a href="{{route('admin.comics.edit', $comic->id)}}">EDIT</a> / DELETE</td>
                     </tr>
                 @empty
                     <tr class="table-primary">
