@@ -39,7 +39,16 @@ class ComicController extends Controller
     public function store(StoreComicRequest $request)
     {
         /* dd($request->all()); */
-    
+        $val_data = $request->validate([
+            'thumb' => 'min:5|nullable',
+            'title' => 'required|min:1|max:500',
+            'price' => 'nullable|numeric|max:1000',
+            'description' => 'nullable|max:1000',
+            'type' => 'nullable',
+            'sale_date' => 'nullable|numeric',
+            'series' => 'nullable|numeric'
+        ]);
+        dd($val_data);
         $data = [
             "thumb" => $request->thumb,
             "price" => $request->price,
@@ -50,8 +59,8 @@ class ComicController extends Controller
             "series" => $request->series,
         ];
         Comic::create($data);
-        return to_route('admin.comics.index')->with('message','is added');
-    } 
+        return to_route('admin.comics.index')->with('message', 'is added');
+    }
 
     /**
      * Display the specified resource.
@@ -61,7 +70,7 @@ class ComicController extends Controller
      */
     public function show(Comic $comic)
     {
-        return view('admin.comics.show',compact('comic'));
+        return view('admin.comics.show', compact('comic'));
     }
 
     /**
@@ -72,7 +81,7 @@ class ComicController extends Controller
      */
     public function edit(Comic $comic)
     {
-        return view('admin.comics.edit',compact('comic'));
+        return view('admin.comics.edit', compact('comic'));
     }
 
     /**
@@ -85,7 +94,7 @@ class ComicController extends Controller
     public function update(UpdateComicRequest $request, Comic $comic)
     {
         /* dd($request->all()); */
-         $data = [
+        $data = [
             "thumb" => $request->thumb,
             "price" => $request->price,
             "title" => $request->title,
@@ -106,7 +115,7 @@ class ComicController extends Controller
      */
     public function destroy(Comic $comic)
     {
-   $comic->delete();
-  return to_route('admin.comics.index')->with('message','valore cancellato correttamente');
-}
+        $comic->delete();
+        return to_route('admin.comics.index')->with('message', 'valore cancellato correttamente');
+    }
 }

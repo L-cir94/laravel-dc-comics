@@ -2,14 +2,22 @@
 @section('title', 'Table Comics')
 @section('content')
 <div class="container">
-    
+    @if ($errors->any())
+        <div class="alert alert-danger" role="alert">
+            <ul>
+                @foreach ($errors->all() as $error)
+                    <li>{{$error}}</li>
+                @endforeach
+            </ul>
+        </div>
+    @endif
     <div class="row me-5">
         <form action="{{route('admin.comics.store', $comic->id)}}" method="post">
             @csrf
             <div class="mb-3">
               <label for="title" class="form-label">Title</label>
               <input type="text"
-                class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="comic's title" required>
+                class="form-control" name="title" id="title" aria-describedby="helpId" placeholder="comic's title">
               <small id="helpId" class="form-text text-muted">Inserisci il titolo del fumetto</small>
             </div>
             <div class="mb-3">
