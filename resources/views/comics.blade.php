@@ -4,7 +4,7 @@
 <div class="container">
     <div class="row">
         @foreach ($comics as $comic )
-        <div class="col-3  g-2">
+        <div class="col-4  g-2">
             
                 
                 <div class="card h-100">
@@ -15,7 +15,7 @@
                         <a href="{{ route('admin.comics.show', $comic->id) }}"><i class="fa-solid fa-eye"></i></a>   
                     </div>
                     <div class="card-body">
-                      <img class="img-fluid" src="{{$comic->thumb}}" alt=" {{$comic->title}}">
+                      <img width="398.39" height="612.53" class="" src="{{$comic->thumb}}" alt=" {{$comic->title}}">
                           
                       <p>{{$comic->description}}</p>
                       <p><strong>{{$comic->price}}</strong></p>
